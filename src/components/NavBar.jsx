@@ -6,7 +6,7 @@ import "../components/styles/Formulario.css";
 
 export const NavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+    <Navbar collapseOnSelect expand="lg" className="bg" variant="dark">
       <Container>
         <Navbar.Brand href="#home">VirtualDreams</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

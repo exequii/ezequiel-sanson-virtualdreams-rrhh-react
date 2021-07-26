@@ -12,6 +12,11 @@
   margin: 2% 0;
 }
 
+.formulario h1,
+p {
+  color: var(--botones-textos) !important;
+}
+
 .cont-button {
   width: 100%;
   display: flex;
@@ -21,4 +26,8 @@
 .boton {
   width: 50%;
   align-items: center;
+}
+
+.invalid-feedback {
+  color: var(--rojo) !important;
 }
