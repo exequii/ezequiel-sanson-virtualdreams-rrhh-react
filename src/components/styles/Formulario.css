@@ -1,0 +1,24 @@
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formulario {
+  width: 50%;
+  padding: 25px;
+  border: 1px solid grey;
+  border-radius: 15px;
+  margin: 2% 0;
+}
+
+.cont-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.boton {
+  width: 50%;
+  align-items: center;
+}
