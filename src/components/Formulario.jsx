@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 export const Formulario = () => {
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -16,14 +16,18 @@ export const Formulario = () => {
       mensaje: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("Ingrese un nombre"),
-      email: Yup.string().email().required("Ingrese un email valido"),
+      name: Yup.string()
+        .matches(/^([A-Z,a-z])/, "Solo se permite ingresar letras")
+        .required("Ingrese un nombre"),
+      email: Yup.string()
+        .email("El formato del email no es valido")
+        .required("Ingrese un email valido"),
       asunto: Yup.string().required("Ingrese texto en el asunto"),
       mensaje: Yup.string().required("Ingrese un mensaje"),
     }),
     onSubmit: (formData) => {
       console.log({ formData });
-      setShow(true);
+      setShowModal(true);
     },
   });
 
@@ -43,6 +47,7 @@ export const Formulario = () => {
             type="text"
             placeholder="Ingrese su nombre"
             onChange={formik.handleChange}
+            isValid={!formik.errors.name}
             isInvalid={!!formik.errors.name}
           />
           <Form.Control.Feedback type="invalid">
@@ -55,6 +60,7 @@ export const Formulario = () => {
             type="email"
             placeholder="Ingrese su Email"
             onChange={formik.handleChange}
+            isValid={!formik.errors.email}
             isInvalid={!!formik.errors.email}
           />
           <Form.Control.Feedback type="invalid">
@@ -68,6 +74,7 @@ export const Formulario = () => {
             placeholder="Ingrese el asunto del mensaje"
             onChange={formik.handleChange}
             isInvalid={!!formik.errors.asunto}
+            isValid={!formik.errors.asunto}
           />
           <Form.Control.Feedback type="invalid">
             {formik.errors.asunto}
@@ -81,6 +88,7 @@ export const Formulario = () => {
             placeholder="Ingrese el mensaje"
             onChange={formik.handleChange}
             isInvalid={!!formik.errors.mensaje}
+            isValid={!formik.errors.mensaje}
           />
           <Form.Control.Feedback type="invalid">
             {formik.errors.mensaje}
@@ -94,8 +102,8 @@ export const Formulario = () => {
       </Form>
 
       <Modal
-        show={show}
-        onHide={() => setShow(false)}
+        show={showModal}
+        onHide={() => setShowModal(false)}
         dialogClassName="modal-90w"
         aria-labelledby="example-custom-modal-styling-title"
       >
