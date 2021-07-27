@@ -1,0 +1,52 @@
+.containerBody {
+  min-height: 630px;
+  background: url(../../images/fondo.jpg) fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bodyHome {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bodyHome h1 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 4em;
+  font-weight: 550;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+.bodyHome h2 {
+  width: 38%;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.login {
+  color: #142841;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 60px;
+  background-color: white;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  transition: all 1s ease-in-out;
+  margin-top: 60px;
+}
+
+.login:hover {
+  background-color: #24afb2;
+  color: white;
+}

@@ -1,16 +1,16 @@
 import React from "react";
 import { NavBar } from "../components/NavBar";
-import { Inicio } from "../components/Inicio";
+import { Formulario } from "../components/Formulario";
 import { Footer } from "../components/Footer";
 
-export const Home = () => {
+export const Contacto = () => {
   return (
     <div>
       <NavBar></NavBar>
-      <Inicio></Inicio>
+      <Formulario></Formulario>
       <Footer></Footer>
     </div>
   );
 };
 
-export default Home;
+export default Contacto;
